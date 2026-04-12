@@ -1,18 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, model } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
-import { ProductService } from '../../services/product';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { Product } from '../../models/product';
+import { ProductService } from '../../services/product';
 
 @Component({
   selector: 'app-table',
-  imports: [MatTableModule],
+  imports: [
+    CurrencyPipe,
+    FormsModule,
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCheckboxModule
+  ],
   templateUrl: './table.html',
   styleUrl: './table.scss',
 })
 export class Table {
 
+  readonly disabled = model(false);
   products: Product[] = [];
-  columns: String[] = ["id", "name", "quantity", "unitValue", "totalValue", "category"];
+  columns: String[] = ["id", "name", "quantity", "unitValue", "totalValue", "category", "actions"];
 
   constructor(
     private service: ProductService
@@ -20,6 +33,18 @@ export class Table {
 
   ngOnInit() {
     this.products = this.service.findAll();
+  }
+
+  save(product: Product) {
+
+  }
+
+  edit(id: string) {
+
+  }
+
+  delete(product: Product) {
+
   }
 
 }
