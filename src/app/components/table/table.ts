@@ -23,7 +23,6 @@ import { ProductService } from '../../services/product';
 })
 export class Table {
 
-  readonly disabled = model(false);
   products: Product[] = [];
   columns: String[] = ["id", "name", "quantity", "unitValue", "totalValue", "category", "actions"];
 

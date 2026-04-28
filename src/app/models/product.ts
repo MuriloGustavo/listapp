@@ -6,4 +6,5 @@ export interface Product {
   quantity: number;
   unitValue: number;
   category: Category;
+  checked: boolean;
 }

@@ -11,10 +11,10 @@ export class ProductService {
 
   findAll(): Product[] {
     return [
-      { id: '1', name: 'Café', quantity: 1, unitValue: 10, category: Category.GROCERIES },
-      { id: '2', name: 'Sabonete', quantity: 2, unitValue: 15, category: Category.PERSONAL_CARE_CLEANING },
-      { id: '1', name: 'Presunto', quantity: 1.5, unitValue: 50, category: Category.MEAT_DELI },
-      { id: '1', name: 'Laranja', quantity: 0.6, unitValue: 6, category: Category.PRODUCE },
+      { id: '1', name: 'Café', quantity: 1, unitValue: 10, category: Category.GROCERIES, checked: false },
+      { id: '2', name: 'Sabonete', quantity: 2, unitValue: 15, category: Category.PERSONAL_CARE_CLEANING, checked: false },
+      { id: '1', name: 'Presunto', quantity: 1.5, unitValue: 50, category: Category.MEAT_DELI, checked: true },
+      { id: '1', name: 'Laranja', quantity: 0.6, unitValue: 6, category: Category.PRODUCE, checked: false },
     ];
   }
 
