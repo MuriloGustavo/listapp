@@ -9,7 +9,7 @@ import { Product } from '../../models/product';
 import { ProductService } from '../../services/product';
 
 @Component({
-  selector: 'app-table',
+  selector: 'app-list',
   imports: [
     CurrencyPipe,
     FormsModule,
@@ -18,10 +18,10 @@ import { ProductService } from '../../services/product';
     MatIconModule,
     MatCheckboxModule
   ],
-  templateUrl: './table.html',
-  styleUrl: './table.scss',
+  templateUrl: './list.html',
+  styleUrl: './list.scss',
 })
-export class Table {
+export class List {
 
   products: Product[] = [];
   columns: String[] = ["id", "name", "quantity", "unitValue", "totalValue", "category", "actions"];
