@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
-import { Category } from '../models/category';
 
 @Injectable({
   providedIn: 'root',
@@ -9,13 +8,15 @@ export class ProductService {
 
   static REPO_PRODUCTS = "_PRODUCTS";
 
+  save(product: Product) {
+    const products = this.getStorage();
+    products.push(product);
+
+    localStorage.setItem(ProductService.REPO_PRODUCTS, JSON.stringify(products));
+  }
+
   findAll(): Product[] {
-    return [
-      { id: '1', name: 'Café', quantity: 1, unitValue: 10, category: Category.GROCERIES, checked: false },
-      { id: '2', name: 'Sabonete', quantity: 2, unitValue: 15, category: Category.PERSONAL_CARE_CLEANING, checked: false },
-      { id: '1', name: 'Presunto', quantity: 1.5, unitValue: 50, category: Category.MEAT_DELI, checked: true },
-      { id: '1', name: 'Laranja', quantity: 0.6, unitValue: 6, category: Category.PRODUCE, checked: false },
-    ];
+    return this.getStorage();
   }
 
   private getStorage(): Product[] {

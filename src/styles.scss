@@ -1,4 +1,3 @@
-
 // Include theming for Angular Material with `mat.theme()`.
 // This Sass mixin will define CSS variables that are used for styling Angular Material
 // components according to the Material 3 design spec.
@@ -7,14 +6,12 @@
 @use '@angular/material' as mat;
 
 html {
-  @include mat.theme((
-    color: (
-      primary: mat.$cyan-palette,
-      tertiary: mat.$orange-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
+  @include mat.theme((color: (primary: mat.$cyan-palette,
+        tertiary: mat.$orange-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
 }
 
 body {
@@ -33,7 +30,83 @@ body {
   // Reset the user agent margin.
   margin: 0;
 }
+
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Base flex
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+// align
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.start {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+//Gap
+.gap-16 {
+  gap: 16px;
+}
+
+//Flex
+.flex-1000 {
+  flex: 0 0 1000px;
+  max-width: 1000px;
+}
+
+.flex-900 {
+  flex: 0 0 900px;
+  max-width: 900px;
+}
+
+.flex-800 {
+  flex: 0 0 800px;
+  max-width: 800px;
+}
+
+.flex-400 {
+  flex: 0 0 400px;
+  max-width: 400px;
+}
+
+//Full-width
+.full-width {
+  width: 100%;
+}
+
+//Margin
+.mt-60 {
+  margin-top: 60px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}

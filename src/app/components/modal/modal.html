@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Adicionar novo produto</h2>
+<form id="productForm" [formGroup]="productForm" (ngSubmit)="add()">
+  <mat-dialog-content>
+
+    <mat-form-field class="full-width">
+      <mat-label>Nome</mat-label>
+      <input type="text" name="name" placeholder="Ex: Café" formControlName="name" matInput />
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Quantidade</mat-label>
+      <input type="number" name="name" placeholder="Ex: 2" formControlName="quantity" matInput />
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Preço Unitário</mat-label>
+      <input type="number" name="name" placeholder="Ex: 2.50" formControlName="unitPrice" matInput />
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="category">
+        @for (category of categories; track category) {
+        <mat-option [value]="category">
+          {{ categoryLabels[category] }}
+        </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button matButton type="submit" mat-dialog-close>Adicionar</button>
+    <button matButton mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+</form>

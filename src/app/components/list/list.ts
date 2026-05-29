@@ -5,6 +5,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product';
 
@@ -24,7 +25,7 @@ import { ProductService } from '../../services/product';
 export class List {
 
   products: Product[] = [];
-  columns: String[] = ["id", "name", "quantity", "unitValue", "totalValue", "category", "actions"];
+  columns: String[] = ["id", "name", "quantity", "unitPrice", "totalValue", "category", "actions"];
 
   constructor(
     private service: ProductService

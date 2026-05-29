@@ -1,12 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { Navbar } from "./components/navbar/navbar";
 import { List } from "./components/list/list";
-import { Modal } from "./components/modal/modal";
 import { AddProduct } from './components/add-product/add-product';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, List, AddProduct, Modal],
+  imports: [Navbar, List, AddProduct],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
